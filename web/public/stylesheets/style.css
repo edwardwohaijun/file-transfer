@@ -1,0 +1,219 @@
+html, body { margin:0; padding:0;}
+/*
+html * {
+    color: #333
+}
+*/
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#main-content-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+a {
+  color: #00B7FF;
+}
+
+fieldset {
+    border-radius: 6px;
+    border: 1px solid #cbcbcb;
+    margin-bottom: 18px;
+}
+.input-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.input-file + label {
+    width: 140px;
+    max-width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0.625em 1.25em;
+    color: #FFF;
+    font-size: 1.2em;
+    font-weight: 700;
+    background-color: #2196f3;
+    display: inline-block;
+}
+.input-file + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+
+/* only 1 text input field, the myId field */
+input[type=text], textarea {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    /* margin: 5px 1px 3px 0px; */
+    border: 1px solid #DDD;
+}
+input[type=text]:focus, textarea:focus {
+    box-shadow: 0 0 5px #2196f3;
+    padding: 3px 0px 3px 3px;
+    /* margin: 5px 1px 3px 0px; */
+    border: 1px solid #2196f3;
+}
+
+a.button {
+    position: relative;
+    display:inline-block;
+    padding:0.3em 1.1em;
+    margin:0 0.3em 0.3em 0;
+    top: -8px;
+    left: 8px;
+    border-radius: 0.3em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+}
+a.button:hover{
+    background-color:#2296f3;
+}
+a.button.not-allowed:hover, input.not-allowed:hover, label.not-allowed {
+    /* background-color:#4eb5f1; */
+    cursor: not-allowed;
+}
+a.button.not-allowed {
+    /* border: 1px solid #999999; */
+    background-color: #ccc;
+    color: #666
+}
+
+@media all and (max-width:30em){
+    a.button {
+        display:block;
+        margin:0.2em auto;
+    }
+}
+
+legend {
+    cursor: help;
+    color: #9E9E9E;
+}
+
+.help-tip {
+    position: absolute;
+    font-size: 12px;
+    color: #FFF;
+    background-color: #757575;
+    width: 90%;
+    margin-top: 6px;
+
+    line-height: 1.8em;
+    border-radius: 4px;
+    opacity: 0;
+    z-index: -1;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.6);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.6);
+    box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.6);
+    padding: 4px 8px;
+    transition: opacity 0.5s ease;
+}
+.arrow-down::before {
+    content: '\25b2';
+    color: #757575;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    padding-left: 0.5em;
+}
+
+#upload-msg {
+    opacity: 0;
+    display: inline-block;
+    margin-left: 18px;
+    position: absolute;
+    margin-top: 12px;
+    padding: 4px 28px;
+    color: #D8000C;
+    background-color: #FFD2D2;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    transition: opacity 0.8s ease;
+}
+#upload-msg.show, .help-tip.show{
+    opacity: 0.9;
+    z-index: auto;
+    transition: opacity 0.5s ease;
+}
+
+table {
+    width: 900px;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+    border-collapse: collapse;
+    border-spacing: 0;
+    line-height: 1.8em;
+    word-break: break-all;
+}
+
+table thead {
+    background-color: #e0e0e0;
+    color: #000;
+    text-align: left;
+    vertical-align: bottom;
+}
+table th, table td {
+    padding: 0.5em 1em;
+    border-width: 0 0 1px;
+    border-bottom: 1px solid #cbcbcb;
+}
+
+
+/*
+<td className="file-idx" style={{width: "5%"}}>{idx + 1}</td>
+                      <td className="file-name" style={{width: "15%"}}>{fileName}</td>
+                      <td className="file-size" style={{width: "10%"}}>{getReadableFileSizeString(f.get('size'))}</td>
+                      <td className="MIME-type" style={{width: "15%"}}>{f.get('MIME')}</td>
+                      <td className="transfer-mode" style={{width: "5%"}}>{f.get("mode") || "Public"}</td>
+                      <td className="file-status" style={{width: "10%"}}>{status}</td>
+                      <td className="file-action" s
+ */
+
+
+table tr th.file-idx, table tbody tr td.file-idx {
+    width: 8%;
+}
+table tr th.file-name, table tbody tr td.file-name {
+    width: 24%;
+}
+table tr th.file-size, table tbody tr td.file-size {
+    width: 12%;
+}
+table tr th.MIME-type, table tbody tr td.MIME-type {
+    width: 24%;
+}
+table tr th.transfer-mode, table tbody tr td.transfer-mode {
+    width: 10%;
+}
+table tr th.file-status, table tbody tr td.file-status {
+    width: 12%;
+}
+table tr th.file-action, table tbody tr td.file-action {
+    width: 10%;
+}
