@@ -48,20 +48,20 @@ type option struct {
 var Values = &option{}
 
 func init (){
-	var serverPort = flag.Int("serverPort", 9090, "server port, default is 9090")
-	var mgoHost = flag.String("mgoHost", "127.0.0.1:27017", "mongoDB hostname/IP and port, default is 127.0.0.1:27017")
+	var serverPort = flag.Int("serverPort", 9090, "server port, default is '9090'")
+	var mgoHost = flag.String("mgoHost", "127.0.0.1:27017", "mongoDB hostname/IP and port, default is '127.0.0.1:27017'")
 	var mgoUsername = flag.String("mgoUsername", "", "mongoDB username, default is empty")
 	var mgoPassword = flag.String("mgoPassword", "", "mongoDB password, default is empty")
-	var mgoDBName = flag.String("mgoDBName", "filetransfer", "mongoDB databas name, default is filetransfer")
-	var mgoCollectionName = flag.String("mgoCollectionName", "files", "mongoDB collection name, default is files")
+	var mgoDBName = flag.String("mgoDBName", "filetransfer", "mongoDB databas name, default is 'filetransfer'")
+	var mgoCollectionName = flag.String("mgoCollectionName", "files", "mongoDB collection name, default is 'files'")
 
 	var maxUpload = flag.Int("maxUpload", 5, "The maximum allowed number of files, default is 5")
-	var maxFileSize = flag.String("maxFileSize", "20M", "The maximum allowed single filesize, default is 20M")
+	var maxFileSize = flag.String("maxFileSize", "20M", "The maximum allowed single filesize, default is '20M'")
 	var duration = flag.String("duration", "30m", "How long uploaded files exist in server, default is 30m, allowed units are: m(minute), h(hour), d(day)")
 	var urlRootPath = flag.String("urlRootPath", "", "The path following your domain, 'transfer' in 'http://www.example.com/transfer', default is empty")
-	var webRoot = flag.String("webRoot", "web", "The directory to serve web static files, default is 'web/' in current working directory")
-	var uploadDir = flag.String("uploadDir", "upload", "The directory to save the uploaded files, relative directory is assumed to be inside current working directory")
-	var webrtcConfig = flag.String("webrtcConfig", "", "the list of iceServers to be passed to client to help them make P2P connection")
+	var webRoot = flag.String("webRoot", "web", "The directory to serve web static files, default is 'web' in current working directory")
+	var uploadDir = flag.String("uploadDir", "upload", "The directory to save the uploaded files, default is 'upload', relative directory is assumed to be in current working directory")
+	var webrtcConfig = flag.String("webrtcConfig", "", "the list of iceServers to be passed to client to help them make P2P connection, must be passed as JSON string, default is empty")
 
 	flag.Parse()
 
