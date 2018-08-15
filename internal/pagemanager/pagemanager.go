@@ -26,7 +26,7 @@ func New(tpl *template.Template) *pageManager {
 	pm := &pageManager{
 		Pages: make(map[pageId]*Page),
 		removePage: make(chan pageId),
-		periodicSweep: time.NewTicker(time.Second * 10).C, // todo: decrease to 10m before getting online
+		periodicSweep: time.NewTicker(time.Minute * 5).C,
 		Tpl: tpl,
 	}
 	return pm
