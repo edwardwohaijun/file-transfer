@@ -88,7 +88,7 @@ type Message struct { // bad naming
 	//To bson.ObjectId `json:"to,omitempty"`
 	Ignore userId `json:"ignore"`
 	Content interface{} `json:"content,omitempty"`
-	SentAt time.Time `json:"sentAt,omitempty"`
+	SentAt time.Time `json:"-,omitempty"`
 }
 
 // upon connected, this msg would be sent to user via websocket
