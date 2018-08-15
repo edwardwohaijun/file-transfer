@@ -90,9 +90,9 @@ func (u *User) writePump() {
 		select {
 		case message := <-u.PeerMsg:
 			u.Socket.SetWriteDeadline(time.Now().Add(writeWait))
-
+			// todo: don't call WriteJSON, marshal the msg first, then call socket.WriteMessage
+			// and don't call WriteMessage concurrently. Use lock if have to.
 			// if err := u.Socket.WriteMessage(websocket.TextMessage, JSONMsg); err != nil {
-			// 先marshal, 失败return
 			if err := u.Socket.WriteJSON(message); err != nil {
 				log.Println("err writeMsg: ", err)
 				return // 一旦出错, 就return, 不好吧. 但一般此类err多数是: client is dead/stuck, 不return还能匝地?
