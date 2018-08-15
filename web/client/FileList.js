@@ -177,6 +177,7 @@ class FileList extends Component {
               <th className="MIME-type">type</th>
               <th className="transfer-mode" >mode</th>{/* (P2P, public) */}
               <th className="file-status">status</th>{/* (transferring, idle/pending/uploading/uploaded) */}
+              {/* todo: add a spinning icon when uploading */}
               <th className="file-action">action</th>
             </tr>
             </thead>
