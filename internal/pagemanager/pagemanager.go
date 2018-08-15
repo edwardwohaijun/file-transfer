@@ -225,7 +225,7 @@ func ShiftPath(p string) (head, tail string) {
 	return p[1:i], p[i:]
 }
 
-// If there is a Nginx proxy server running in front of this app, let Nginx handle the static files instead.
+// If there is a Nginx proxy server running in front of this app, let Nginx handle the static files instead. See README.md
 var fs = http.FileServer(http.Dir(config.Values.WebRoot))
 func (pm *pageManager) ServeHTTP(w http.ResponseWriter, r *http.Request){
 	if !strings.HasPrefix(path.Join(r.URL.Path, "/"), path.Join(config.Values.UrlRootPath, "/")) { // the path.Join(..) make sure /abcDEF doesn't match /abc
