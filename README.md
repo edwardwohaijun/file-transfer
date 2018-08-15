@@ -6,6 +6,20 @@ A simple file transfer web app with support of P2P. Backend is written in Golang
 * upload progress is broadcast to all online users
 * page and all its files are auto expired and deleted after specified duration
 
+# How to use
+I have deployed this app on my server, please go to
+[https://worksphere.cn/transfer](https://worksphere.cn/transfer).
+You'll be redirected to another page with the URL like this: `https://worksphere.cn/transfer/pdhwhwdwny84x1qvzig3xg0z`
+
+On this page, you can upload 4 files at most(each file 5M at most), send the page URL to your friends.
+You don't need to wait for the upload to finish, then send the URL. Your friends will see the upload progress as you do.
+Each page will expire after 20 minutes, after that, all files are removed, and the page URL is no longer valid.
+
+This is a personal site with limited network bandwidth and storage, don't expect too much from the server performance.
+However, if you and your friends are both online at he same time, you can try the P2P transfer(Chrome browser only) which copy the file between your browsers without going through server.
+The number of files and file size you can transfer in P2P mode is only limited by your computer hard drive.
+But P2P connection is not guaranteed to work 100%.
+
 Here is a running screenshot:
 
 ![running screesnshot](https://raw.githubusercontent.com/edwardwohaijun/file-transfer/master/screenshot.gif)
