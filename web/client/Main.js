@@ -157,7 +157,6 @@ class Main extends Component {
   };
 
   init = data => {
-    // console.log('initialise: ', data);
     data.fileList.forEach(f => {
       f.progress = f.uploaded ? 1: 0;
       f.status = f.uploaded ? "uploaded" : "pending";
@@ -229,7 +228,7 @@ class Main extends Component {
       peerList: this.state.peerList.push(fromJS(peer))
     });
     if (filer.isFileSystemAPIsupported){
-      filer.createConnection(peer.id) // todo: use a random timeout value to createConnection, otherwise, answerer would get a burst of createConnection request.
+      filer.createConnection(peer.id) // todo: use a random timeout value to createConnection, otherwise, answerer would get a burst of many createConnection requests.
     }
   };
 
