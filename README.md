@@ -7,6 +7,7 @@ A simple file transfer web app with support of P2P. Backend is written in Golang
 * page and all its files are auto expired and deleted after specified duration
 
 Here is a running screenshot:
+
 ![running screesnshot](https://raw.githubusercontent.com/edwardwohaijun/file-transfer/master/screenshot.gif)
 
 # Prerequisites
