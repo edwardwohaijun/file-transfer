@@ -141,7 +141,6 @@ func init (){
 		log.Fatalf("uploadDir '%s' is not a directory\n", *uploadDir)
 	}
 
-	fmt.Println("OS", runtime.GOOS)
 	runningOS := runtime.GOOS
 	// run "go tool dist list -json" to get a list of supported OS
 	if runningOS == "linux" || runningOS == "darwin" || runningOS == "freebsd" || runningOS == "solaris" || runningOS == "openbsd" || runningOS == "netbsd" {
