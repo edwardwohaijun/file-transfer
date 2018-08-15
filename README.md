@@ -28,13 +28,12 @@ Here is a running screenshot:
 * Go(>= 1.9.2)
 * MongoDB(>= 3.2)
 * Chrome browser for P2P file transfer
+* NodeJS(>=6.5) for client side JavaScript bundling
 
 # Build
 ```bash
-mkdir $GOPATH/src/github.com/edwardwohaijun
-cd $GOPATH/src/github.com/edwardwohaijun
-git clone https://github.com/edwardwohaijun/file-transfer
-cd file-transfer
+go get github.com/edwardwohaijun/file-transfer/cmd/filetransferd
+cd $GOPATH/src/github.com/edwardwohaijun/file-transfer/
 go build -o filetransferd cmd/filetransferd/main.go
 
 cd web
