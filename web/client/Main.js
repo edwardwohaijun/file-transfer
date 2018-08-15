@@ -107,7 +107,6 @@ class Main extends Component {
         case "ERR_PEER_CLOSED":
         case "ERR_PEER_ERROR":
         case "ERR_PEER_CONNECTION_FAILED":
-          console.log("err/peer: ", err);
           this.setP2PconnectionFlag(err.peerID, false);
       }
     });
