@@ -15,8 +15,8 @@ import (
 	"path/filepath"
 )
 
-// progress value get updated and broadcast to clients every 10%
-const progressStep = 10
+// progress value get updated and broadcast to clients every 5%
+const progressStep = 5
 // FileUploadProgress is a io.Writer, passed to io.Copy() when client is uploading a file,
 // it serves 2 purposes: to calculate the uploaded bytes(return error if exceeded maximum allowed filesize), to broadcast the progress value to all clients
 type FileUploadProgress struct {
@@ -280,7 +280,7 @@ func (p *Page) HandleUpload(w http.ResponseWriter, r *http.Request, pageId strin
 			return
 		}
 
-		// progress value got updated every 10%, the first 10% might take a while to show, during which users might get confused, why nothing happens.
+		// progress value got updated every 5%, the first 5% might take a while to show, during which users might get confused, why nothing happens.
 		// Thus, we notify users uploading just started by showing a 0%.
 		progress.broadcastProgress(&Message{
 			Type: UploadProgressMsg,
@@ -317,9 +317,9 @@ func NewPage(pid pageId) *Page {
 		Id: pid,
 		Users: make([]*User, 0),
 		Files: make([]*File, 0, config.Values.MaxUpload),
-		forward: make(chan *Message), // busy channel, better have a buffer, 理由同下, 上线前再加上buffer
-		join: make(chan *User), // todo: dev阶段, 上线前, buffer最好还是改为4, 8为佳
-		leave: make(chan *User),
+		forward: make(chan *Message, 8), // busy channel, better have a buffer
+		join: make(chan *User, 4),
+		leave: make(chan *User, 4),
 		closed: make(chan struct{}), // when page expired, this channel is closed in page.run(), each msg sending to other channels need to check closeness of this channel before proceed
 		ExpiresAt: time.Now().Local().Add(config.Values.Duration),
 	}
