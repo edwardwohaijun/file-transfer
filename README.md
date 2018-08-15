@@ -38,7 +38,7 @@ cd file-transfer
 go build -o filetransferd cmd/filetransferd/main.go
 
 cd web
-npm run install
+npm install
 npm run build (for development environment)
 npm run ship (for production environment)
 ```
