@@ -93,6 +93,9 @@ location /transfer {
 }
 ```
 
+The P2P feature works pretty well in small office and local network, you can adjust the `maxUpload`, `maxFileSize` to meet your needs.
+It only takes you less than 2 minutes to `go get` the code, build, deploy the web app, :stuck_out_tongue_winking_eye:.
+
 # License
 
 This project is licensed under the [MIT License](/LICENSE).
