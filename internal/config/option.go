@@ -16,7 +16,7 @@ import (
 )
 
 type stunServers struct {
-	Url string `json:"url,omitempty"`
+	Urls string `json:"url,omitempty"`
 	Username string `json:"username,omitempty"`
 	Credential string `json:"credential,omitempty"`
 }
