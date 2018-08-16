@@ -16,7 +16,7 @@ import (
 )
 
 // progress value get updated and broadcast to clients every 5%
-const progressStep = 5
+const progressStep = 20
 // FileUploadProgress is a io.Writer, passed to io.Copy() when client is uploading a file,
 // it serves 2 purposes: to calculate the uploaded bytes(return error if exceeded maximum allowed filesize), to broadcast the progress value to all clients
 type FileUploadProgress struct {
