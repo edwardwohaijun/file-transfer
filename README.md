@@ -1,3 +1,5 @@
+[中文](https://github.com/edwardwohaijun/file-transfer/blob/master/README_cn.md)
+
 # Introduction
 A simple file transfer web app with support of P2P. Backend is written in Golang, frontend with React.
 
@@ -57,7 +59,7 @@ filetransferd -webRoot /var/www/filetransferd/web
 * `mgoPassword` mongoDB password, default is empty.
 * `mgoDBName` mongoDB database name, default is `filetransfer`.
 * `mgoCollectionName` mongoDB collection name, default is `files`.
-* `maxUpload` the maximum allowed number of upload files, default is 5.
+* `maxUpload` the maximum allowed number of upload files for one page, default is 5.
 * `maxFileSize` the maximum allowed single filesize, default is 20M, only allowed unit is `megabyte`, `10m`, `20M` are all valid.
 * `duration` how long uploaded files exist on server, default is 30m, allowed units are: m(minute), h(hour), d(day).
 * `urlRootPath` the path following your domain(or IP), for example: `transfer` in http://www.example.com/transfer, default is empty.
@@ -70,8 +72,8 @@ Examples:
 filetransferd -serverPort 9090 -maxUpload 5 -maxFileSize 20M -duration 30m -urlRootPath abc/xyz/ -webRoot ./web -uploadDir ./upload
 -webrtcConfig '{"iceServers":[{"urls":"stun:stun.l.google.com:19302"},{"urls":"stun:global.stun.twilio.com:3478?transport=udp"}]}'
 ```
-You can run multiple app instances, but they must at least have different `serverPort` and `urlRootPath`.
-Go to http://127.0.0.1:9090/, if you want to experience the P2P file transfer, open 2 tabs.
+Go to http://127.0.0.1:9090/abc/xyz/, if you want to experience the P2P file transfer, open 2 tabs.
+You can run multiple app instances, as long as they have different `serverPort`.
 
 If you have Nginx(>= 1.7.11) running in front, let it handle the `webRoot` directory for better performance.
 Copy the `web/public` folder to where Nginx can access (like `/var/www/webApp/transfer/`), and edit Nginx config file, like the following:
