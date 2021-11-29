@@ -10,8 +10,8 @@ A simple file transfer web app with support of P2P. Backend is written in Golang
 
 # How to use
 I have deployed this app on my server, please go to
-[https://worksphere.cn/transfer](https://worksphere.cn/transfer).
-You'll be redirected to another page with the URL like this: `https://worksphere.cn/transfer/pdhwhwdwny84x1qvzig3xg0z`
+[https://ewo.xyz/transfer](https://ewo.xyz/transfer).
+You'll be redirected to another page with the URL like this: `https://ewo.xyz/transfer/pdhwhwdwny84x1qvzig3xg0z`
 
 On this page, you can upload 4 files at most(each file 5M at most), send the page URL to your friends.
 You don't need to wait for the upload to finish, then send the URL. Your friends will see the upload progress as you do.
