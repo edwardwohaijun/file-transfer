@@ -7,8 +7,8 @@
 * 过了失效期后, 页面上的文件自动删除.
 
 # 如何使用
-该应用已经部署在我的个人网站上[https://worksphere.cn/transfer](https://worksphere.cn/transfer).
-你可以前往体验一下(会被跳转到另外一个URL, 类似于: `https://worksphere.cn/transfer/pdhwhwdwny84x1qvzig3xg0z`)
+该应用已经部署在我的个人网站上[https://ewo.xyz/transfer](https://worksphere.cn/transfer).
+你可以前往体验一下(会被跳转到另外一个URL, 类似于: `https://ewo.xyz/transfer/pdhwhwdwny84x1qvzig3xg0z`)
 
 在新页面上, 你最多允许上传4个文件(每个最大5M), 你只需将该页面地址发给你的好友即可.
 你无需等待文件上传完毕后, 再发URL, 你的好友和你一样, 都能实时看到文件的上传进度.
