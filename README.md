@@ -95,6 +95,11 @@ location /transfer {
 }
 ```
 
+And don't forget to add the following in http(or server or location) direction. By default, nginx only allow 1M file upload limit.
+```
+client_max_body_size 5M;
+```
+
 The P2P feature works pretty well in small office and local network, you can adjust the `maxUpload`, `maxFileSize` to meet your needs.
 It only takes you less than 2 minutes to `go get` the code, build, deploy the web app, :stuck_out_tongue_winking_eye:.
 
