@@ -95,7 +95,7 @@ location /transfer {
 }
 ```
 
-And don't forget to add the following in http(or server or location) direction. By default, nginx only allow 1M file upload limit.
+And don't forget to add the following in http(or server or location) directive. By default, nginx only allow 1M file upload limit.
 ```
 client_max_body_size 5M;
 ```
