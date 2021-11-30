@@ -95,6 +95,12 @@ location /abc/xyz {
 }
 ```
 
+同时, 不要忘记在http(or server or location) directive中添加如下规则. 默认,nginx只允许1M的文件上传.
+```
+client_max_body_size 5M;
+```
+
+
 # License
 
 This project is licensed under the [MIT License](/LICENSE).
